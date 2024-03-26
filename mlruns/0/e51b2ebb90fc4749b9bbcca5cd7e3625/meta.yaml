@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/DEVELOPMENT/Data_science/Wine_ML_project/mlruns/0/e51b2ebb90fc4749b9bbcca5cd7e3625/artifacts
+end_time: 1711391301446
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e51b2ebb90fc4749b9bbcca5cd7e3625
+run_name: angry-gnat-500
+run_uuid: e51b2ebb90fc4749b9bbcca5cd7e3625
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711391297744
+status: 3
+tags: []
+user_id: Tushar Gharge

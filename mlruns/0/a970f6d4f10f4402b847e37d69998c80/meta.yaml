@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/DEVELOPMENT/Data_science/Wine_ML_project/mlruns/0/a970f6d4f10f4402b847e37d69998c80/artifacts
+end_time: 1711390609462
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a970f6d4f10f4402b847e37d69998c80
+run_name: unique-slug-648
+run_uuid: a970f6d4f10f4402b847e37d69998c80
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711390604601
+status: 3
+tags: []
+user_id: Tushar Gharge

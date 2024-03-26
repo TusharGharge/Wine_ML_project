@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/DEVELOPMENT/Data_science/Wine_ML_project/mlruns/0/c41f73b2d4b54e77aff145dcec53909a/artifacts
+end_time: 1711440457524
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c41f73b2d4b54e77aff145dcec53909a
+run_name: redolent-kit-575
+run_uuid: c41f73b2d4b54e77aff145dcec53909a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711440451028
+status: 3
+tags: []
+user_id: Tushar Gharge

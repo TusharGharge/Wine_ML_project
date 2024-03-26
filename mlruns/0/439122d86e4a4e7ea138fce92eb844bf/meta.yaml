@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/DEVELOPMENT/Data_science/Wine_ML_project/mlruns/0/439122d86e4a4e7ea138fce92eb844bf/artifacts
+end_time: 1711390644128
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 439122d86e4a4e7ea138fce92eb844bf
+run_name: adventurous-ray-248
+run_uuid: 439122d86e4a4e7ea138fce92eb844bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711390640583
+status: 3
+tags: []
+user_id: Tushar Gharge
