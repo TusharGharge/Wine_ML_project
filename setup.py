@@ -7,8 +7,8 @@ with open("README.md", "r", encoding="utf-8") as f:
 __version__ = "0.0.0"
 
 REPO_NAME = "WINE-Project-with-MLflow"
-AUTHOR_USER_NAME = "Tushar gharge"
-SRC_REPO = "mlProject"
+AUTHOR_USER_NAME = "TusharGharge"
+SRC_REPO = "Wine_ML_project"
 AUTHOR_EMAIL = "tushargharge1111@gmail.com"
 
 
