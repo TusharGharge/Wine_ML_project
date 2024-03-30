@@ -44,7 +44,9 @@ RUN apt update -y && apt install awscli -y
 WORKDIR /app
 
 COPY . /app
-RUN pip install -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 
 
 CMD ["python3","app.py"]
