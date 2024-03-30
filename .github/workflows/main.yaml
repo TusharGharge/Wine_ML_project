@@ -7,8 +7,8 @@ on:
     paths-ignore:
       - 'README.md'
 
-
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -37,7 +37,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
-          
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -59,9 +58,10 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          sudo docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          sudo docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          
           
   Continuous-Deployment:
     needs: build-and-push-ecr-image
@@ -81,9 +81,10 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       
+      
       - name: Pull latest images
         run: |
-          sudo docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
          
       # - name: Stop and remove container if running
       #   run: |
@@ -91,8 +92,7 @@ jobs:
        
       - name: Run Docker Image to serve users
         run: |
-          sudo docker run -d -p 8080:8080 --name=mlproj -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-          
+         docker run -d -p 8080:8080 --name=mlproj -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
       - name: Clean previous images and containers
         run: |
-          sudo docker system prune -f
+         docker system prune -f
